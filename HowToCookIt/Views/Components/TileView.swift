@@ -16,15 +16,7 @@ struct TileView: View {
 			AsyncImage(url: imageURL) { image in
 				image
 				.resizable()
-				.scaledToFit()
-				.overlay(LinearGradient(
-					colors: [.black.opacity(0.7),
-							 .clear,
-							 .black.opacity(0.7)],
-					startPoint: .topTrailing,
-					endPoint: .bottomLeading))
-				.frame(width: bounds.width * 0.85, height: 270)
-				.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+				.scaledToFill()
 			}  placeholder: {
 				ProgressView()
 			   }
@@ -33,15 +25,25 @@ struct TileView: View {
 				HStack(alignment: .top) {
 					VStack(alignment: .leading, spacing: 20) {
 						Text(title)
-							.font(.title)
+							.font(.title3)
 					}
 					.frame(maxWidth: bounds.width * 0.7, alignment: .leading)
 				}
 				.padding()
-				.background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
+				.background(.thinMaterial,
+							in: RoundedRectangle(cornerRadius: 20))
+				.padding()
 			}
 			.padding()
 		}
+		.overlay(LinearGradient(
+			colors: [.black.opacity(0.7),
+					 .clear,
+					 .black.opacity(0.7)],
+			startPoint: .topTrailing,
+			endPoint: .bottomLeading))
+		.frame(width: bounds.width * 0.85, height: 200)
+		.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
 }
 

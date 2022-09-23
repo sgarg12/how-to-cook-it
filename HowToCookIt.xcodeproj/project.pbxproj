@@ -42,6 +42,11 @@
 		83174B4528D8424000585940 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83174B3F28D8424000585940 /* CategoryListView.swift */; };
 		83174B4A28D8540B00585940 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83174B4928D8540B00585940 /* SearchBar.swift */; };
 		83174B4E28D8653200585940 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83174B4D28D8653100585940 /* TileView.swift */; };
+		83AC5D1F28DD100E009284AE /* RecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC5D1E28DD100E009284AE /* RecipeHeaderView.swift */; };
+		83AC5D2128DD160A009284AE /* TextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC5D2028DD160A009284AE /* TextHeaderView.swift */; };
+		83AC5D2328DD82D0009284AE /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC5D2228DD82D0009284AE /* IngredientsView.swift */; };
+		83AC5D2528DD87BA009284AE /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC5D2428DD87BA009284AE /* InstructionsView.swift */; };
+		83AC5D2728DD8BB9009284AE /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AC5D2628DD8BB9009284AE /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,11 @@
 		83174B3F28D8424000585940 /* CategoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		83174B4928D8540B00585940 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		83174B4D28D8653100585940 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		83AC5D1E28DD100E009284AE /* RecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHeaderView.swift; sourceTree = "<group>"; };
+		83AC5D2028DD160A009284AE /* TextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeaderView.swift; sourceTree = "<group>"; };
+		83AC5D2228DD82D0009284AE /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		83AC5D2428DD87BA009284AE /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		83AC5D2628DD8BB9009284AE /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				83174B0528D83DA800585940 /* RecipeScreen.swift */,
+				83AC5D1E28DD100E009284AE /* RecipeHeaderView.swift */,
+				83AC5D2028DD160A009284AE /* TextHeaderView.swift */,
+				83AC5D2228DD82D0009284AE /* IngredientsView.swift */,
+				83AC5D2428DD87BA009284AE /* InstructionsView.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 			children = (
 				83174B4928D8540B00585940 /* SearchBar.swift */,
 				83174B4D28D8653100585940 /* TileView.swift */,
+				83AC5D2628DD8BB9009284AE /* BackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -340,9 +355,13 @@
 				83174B2628D83F9A00585940 /* Bundle+Extension.swift in Sources */,
 				83174B2428D83F9A00585940 /* Color+Extension.swift in Sources */,
 				83174B1628D83E5700585940 /* Constants.swift in Sources */,
+				83AC5D2728DD8BB9009284AE /* BackButton.swift in Sources */,
 				83174AEF28D83D1700585940 /* HowToCookItApp.swift in Sources */,
+				83AC5D2328DD82D0009284AE /* IngredientsView.swift in Sources */,
+				83AC5D2528DD87BA009284AE /* InstructionsView.swift in Sources */,
 				83174B1528D83E5700585940 /* AppUserDefaults.swift in Sources */,
 				83174B3428D8405E00585940 /* LottieView.swift in Sources */,
+				83AC5D1F28DD100E009284AE /* RecipeHeaderView.swift in Sources */,
 				83174B1128D83E1100585940 /* MealsListViewModel.swift in Sources */,
 				83174B4328D8424000585940 /* MealsListView.swift in Sources */,
 				83174B0128D83D6F00585940 /* CategoryResponse.swift in Sources */,
@@ -360,6 +379,7 @@
 				83174B0028D83D6F00585940 /* MealsResponse.swift in Sources */,
 				83174B2528D83F9A00585940 /* Image+Extension.swift in Sources */,
 				83174B1F28D83F6100585940 /* NetworkManager.swift in Sources */,
+				83AC5D2128DD160A009284AE /* TextHeaderView.swift in Sources */,
 				83174B0228D83D6F00585940 /* RecipeResponse.swift in Sources */,
 				83174B1D28D83EEF00585940 /* OnboardingModel.swift in Sources */,
 				83174B0828D83DA800585940 /* RecipeScreen.swift in Sources */,

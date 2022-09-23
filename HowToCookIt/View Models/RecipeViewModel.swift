@@ -9,10 +9,7 @@ import Foundation
 
 class RecipeViewModel: ObservableObject {
 	
-	@Published var name: String = ""
-	@Published var ingredients: [String] = []
-	@Published var measurements: [String] = []
-	@Published var imageURL: URL?
+	@Published var recipe: Recipe = Recipe()
 	
 	func fetchRecipeByID(_ id: String) async {
 		do {
@@ -21,10 +18,7 @@ class RecipeViewModel: ObservableObject {
 			}
 			if let recipe = recipeResponse.meals.first {
 				Task { @MainActor in
-					self.name = recipe.name
-					self.ingredients = recipe.ingredients
-					self.measurements = recipe.measurements
-					self.imageURL = URL(string: recipe.imageURL)
+					self.recipe = recipe
 				}
 			}
 			

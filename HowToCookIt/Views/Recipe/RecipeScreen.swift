@@ -10,39 +10,46 @@ import SwiftUI
 struct RecipeScreen: View {
 	
 	@StateObject private var recipeVM = RecipeViewModel()
+	@State private var categoryShown: HeaderCategory = .ingredients
+	
 	let id: String
 	let bounds = UIScreen.main.bounds
 	
 	var body: some View {
-		VStack(alignment: .leading) {
-			AsyncImage(url: recipeVM.imageURL) { image in
-				image
-					.resizable()
-					.aspectRatio(contentMode: .fit)
-					.frame(width: bounds.width - 20)
-					.clipShape(RoundedRectangle(
-						cornerRadius: 10.0,
-						style: .continuous)
-					)
-			}
-		placeholder: {
-			ProgressView()
-		}
-		.padding(.bottom, 20)
-			
-			ForEach(recipeVM.ingredients.indices, id: \.self) { index in
-				HStack{
-					Text(recipeVM.measurements[index])
-					Text(recipeVM.ingredients[index])
+		VStack {
+			ZStack {
+				RecipeHeaderView(resourceURL: recipeVM.recipe.imageURL)
+				VStack {
+					BackButton()
+					Spacer()
 				}
 			}
+			.frame(maxWidth: bounds.width, maxHeight: 250)
+			.clipped()
 			
-			Spacer()
+			List {
+				VStack(alignment: .leading, spacing: 10) {
+					TextHeaderView(recipe: recipeVM.recipe, categoryShown: $categoryShown)
+					if (categoryShown == .ingredients) {
+						IngredientsView(ingredients: recipeVM.recipe.ingredients, measurements: recipeVM.recipe.measurements)
+					} else {
+						InstructionsView(steps: recipeVM.recipe.instructions)
+					}
+				}
+				.padding(.top)
+			}
+			.listStyle(.plain)
 		}
-		.padding()
+		.navigationBarHidden(true)
+		.ignoresSafeArea()
 		.task {
 			await recipeVM.fetchRecipeByID(id)
 		}
 	}
 }
 
+struct RecipeScreen_Previews: PreviewProvider {
+	static var previews: some View {
+		RecipeScreen(id: "52772")
+	}
+}
